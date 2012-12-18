@@ -17,5 +17,7 @@
 #define MR_MOTOR_R_PIN 50
 
 void MotorSetup();
+void EnableMotor();
+void DisableMotor();
 
 #endif /* defined(____MR_Motor__) */
