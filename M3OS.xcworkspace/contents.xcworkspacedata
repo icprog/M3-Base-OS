@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:MIDI.h">
+   </FileRef>
+   <FileRef
+      location = "group:MIDI.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:MR_IO.h">
+   </FileRef>
+   <FileRef
+      location = "group:MR_IO.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:MR_Stepper.h">
+   </FileRef>
+   <FileRef
+      location = "group:MR_Stepper.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:MR_Solenoid.h">
+   </FileRef>
+   <FileRef
+      location = "group:MR_Solenoid.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:MR_Motor.h">
+   </FileRef>
+   <FileRef
+      location = "group:MR_Motor.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:MR_MIDI.h">
+   </FileRef>
+   <FileRef
+      location = "group:MR_MIDI.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:MusicalRobots.h">
+   </FileRef>
+   <FileRef
+      location = "group:MusicalRobots.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:M3-Base-OS.ino">
+   </FileRef>
+</Workspace>

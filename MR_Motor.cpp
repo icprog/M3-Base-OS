@@ -36,7 +36,7 @@ void velocityControlMotor(int velocity, bool direction) {
     if (DRIVE_MOTOR) {
         analogWrite(MR_MOTOR_PWM_PIN, velocity);
     } else {
-		analogWrite(MR_MOTOR_F_PIN, 0);
+		analogWrite(MR_MOTOR_PWM_PIN, 0);
 	}
 }
 

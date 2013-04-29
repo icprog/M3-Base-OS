@@ -11,6 +11,7 @@
 
 #include <Arduino.h>
 #include "MR_IO.h"
+#include <EEPROM.h>
 
 //define all basic IO pins
 

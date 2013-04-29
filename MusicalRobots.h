@@ -10,7 +10,7 @@
 #define ____MusicalRobots__
 
 #include <Arduino.h>
-//#include <EEPROM.h>
+#include <EEPROM.h>
 #include "MR_IO.h"
 #include "MR_Solenoid.h"
 #include "MR_Stepper.h"
@@ -19,7 +19,8 @@
 #include "MIDI.h"
 #include "MR_MIDI.h"
 
-#include <Scheduler.h>
+#include "EEPROM.h"
+//#include <Scheduler.h>
 
 extern bool DISPLAY_MENU;
 extern MIDI_Class MIDI;

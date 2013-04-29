@@ -8,6 +8,7 @@
 
 #include "MR_IO.h"
 #include "MR_MIDI.h"
+#include "EEPROM.h"
 
 //globals
 bool DISPLAY_MENU = false;
@@ -49,7 +50,7 @@ void previousSetting() {
 
 void loadSetting(int index) {
 	if (DISPLAY_MENU) {
-		//MR_SETTINGS_LIST[index].value = EEPROM.read(index);
+		MR_SETTINGS_LIST[index].value = EEPROM.read(index);
 	}
 }
 
@@ -57,7 +58,7 @@ void saveSetting(int index, int value) {
 	if (DISPLAY_MENU) {
 		//so the settings are changed
 		value = constrain(value, 0, 255);
-		//EEPROM.write(index, byte(value));
+		EEPROM.write(index, byte(value));
 
 		//update based on case
 		switch (index) {
@@ -80,26 +81,10 @@ void saveSetting(int index, int value) {
 				MIDISetTHRU(value);
 				break;
 			case 6:
-				IODisplaySetBrightness(value);
-				break;
-			case 7:
-				setSolenoidPairMode(1, value);
-				break;
-			case 8:
-				setSolenoidPairMode(2, value);
-				break;
-			case 9:
-				setSolenoidPairMode(3, value);
-				break;
-			case 10:
-				setSolenoidPairMode(4, value);
-				break;
-			case 11:
 				setSolenoidMinOnTime(value);
 				break;
-			case 12:
+			case 7:
 				setSolenoidMaxOnTime(value);
-				break;
 				
 			default:
 				//save nothing
@@ -173,7 +158,7 @@ MR_SETTING& _MR_AddGlobalSetting(char* n, int v, int m, int x) {
 }
 
 void addSetting(char* n,int m, int x){
-	MR_SETTINGS_LIST[_MR_SETTTINGS_LIST_INDEX++] = _MR_AddGlobalSetting(n, 1,m,x);//EEPROM.read(_MR_SETTTINGS_LIST_INDEX), m, x);
+	MR_SETTINGS_LIST[_MR_SETTTINGS_LIST_INDEX++] = _MR_AddGlobalSetting(n, EEPROM.read(_MR_SETTTINGS_LIST_INDEX), m, x);
 }
 
 void IOSetupLCD() {

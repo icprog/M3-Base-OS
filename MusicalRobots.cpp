@@ -6,6 +6,7 @@
 //
 //
 #include "MusicalRobots.h"
+#include "EEPROM.h"
 
 //external variables
 extern bool DISPLAY_MENU; //menu resource semaphore/mutex
@@ -78,15 +79,11 @@ void INIT() {
 	addSetting("Vel Curve", 1, 126);//4
 	addSetting("Enable MIDI THRU", 0, 1);//5
 	addSetting("Backlight", 1, 30);//6
-	addSetting("Sol 1&2 Mode", 0, 1);//7
-	addSetting("Sol 3&4 Mode", 0, 1);//8
-	addSetting("Sol 5&6 Mode", 0, 1);//9
-	addSetting("Sol 7&8 Mode", 0, 1);//10
-	addSetting("S Min On Time", 1, 254);//11
-	addSetting("S Max On Time", 2, 255);//12
+	addSetting("S Min On Time", 1, 254);//7
+	addSetting("S Max On Time", 2, 255);//8
 
 	//initialize initial setting menu value
-	CURRENT_SETTING_SELECTED_VALUE = 0;//EEPROM.read(0);
+	CURRENT_SETTING_SELECTED_VALUE = EEPROM.read(0);
 
 	//load the rest of the settings into our global variables
 	for (i=0; i<_MR_SETTTINGS_LIST_INDEX; i++) {
@@ -109,14 +106,14 @@ void INIT() {
 	}
 	delay(200);
 	//bug fix to establish final brightness
-	IODisplaySetBrightness(30);//EEPROM.read(6));
+	IODisplaySetBrightness(EEPROM.read(6));
 	delay(200);
 
 	//directly read these to make absolutely sure we have the right values
-	setSolenoidPairMode(1, 0);//EEPROM.read(7));
-	setSolenoidPairMode(2, 0);//0);//EEPROM.read(8));
-	setSolenoidPairMode(3, 0);//EEPROM.read(9));
-	setSolenoidPairMode(4, 0);//EEPROM.read(10));
+	setSolenoidPairMode(1, EEPROM.read(7));
+	setSolenoidPairMode(2, EEPROM.read(8));
+	setSolenoidPairMode(3, EEPROM.read(9));
+	setSolenoidPairMode(4, EEPROM.read(10));
 
 	//enable pins
 	SetupSolenoids();
@@ -200,5 +197,5 @@ void loop() {
 	THREAD_UPDATE_GRAPHICS();
 	THREAD_DISPLAY_DRIVER();
 	THREAD_ROBOT_DRIVER();
-	THREAD_NETWORK();
+	//THREAD_NETWORK();
 }

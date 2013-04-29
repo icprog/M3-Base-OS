@@ -42,6 +42,7 @@ void MIDISetChannel(int channel) {
 	MIDI.setInputChannel(channel);
 }
 
+
 int MIDIGetChannel() {
 	return _MIDI_channel;
 }

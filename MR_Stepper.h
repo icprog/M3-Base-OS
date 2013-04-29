@@ -10,6 +10,7 @@
 #define ____MR_Stepper__
 
 #include <Arduino.h>
+#include <EEPROM.h>
 #include "MR_IO.h"
 
 #define MR_STEPPER_STEP_PIN 30
