@@ -16,7 +16,6 @@ unsigned short int _SOLENOID_MIN_ON_TIME =1;
 unsigned short int _SOLENOID_MAX_ON_TIME = 255;
 
 //timer to figure out when to turn off solenoid
-<<<<<<< HEAD
 unsigned long _SOLENOID_1_LAST_TRIGGER_TIME = 0;
 unsigned long _SOLENOID_2_LAST_TRIGGER_TIME = 0;
 unsigned long _SOLENOID_3_LAST_TRIGGER_TIME = 0;
@@ -25,7 +24,6 @@ unsigned long _SOLENOID_5_LAST_TRIGGER_TIME = 0;
 unsigned long _SOLENOID_6_LAST_TRIGGER_TIME = 0;
 unsigned long _SOLENOID_7_LAST_TRIGGER_TIME = 0;
 unsigned long _SOLENOID_8_LAST_TRIGGER_TIME = 0;
-=======
 unsigned long long int _SOLENOID_1_LAST_TRIGGER_TIME = 0;
 unsigned long long int _SOLENOID_2_LAST_TRIGGER_TIME = 0;
 unsigned long long int _SOLENOID_3_LAST_TRIGGER_TIME = 0;
@@ -34,7 +32,6 @@ unsigned long long int _SOLENOID_5_LAST_TRIGGER_TIME = 0;
 unsigned long long int _SOLENOID_6_LAST_TRIGGER_TIME = 0;
 unsigned long long int _SOLENOID_7_LAST_TRIGGER_TIME = 0;
 unsigned long long int _SOLENOID_8_LAST_TRIGGER_TIME = 0;
->>>>>>> Added Files
 
 //states used for diplaying status 
 unsigned int _SOLENOID_1_STATE = 0;//assume 0 to be idle (returned and resting);
